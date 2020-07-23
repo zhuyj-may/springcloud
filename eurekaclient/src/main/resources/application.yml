@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: eurka-client-one
+
+# eureka 注册中心配置
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8762
+
+
+#动态刷新配置 ---需要忽略权限拦截
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,info
+
+config:
+  num: 102
