@@ -3,12 +3,15 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: localhost         # ip
+  server:
+    enable-self-preservation: false # 设为false，关闭自我保护
+    eviction-interval-timer-in-ms: 10000 # 清理间隔启用主动失效 （缺省60*1000） 下线或者故障服务
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: false  # 表示是否将自己注册到Eureka Server,默认为true
+    fetchRegistry: false       # 表示是否从Eureka Server获取注册信息,默认为true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 spring:
   application:
-    name: eurka-server
+    name: eurka-server           #app名称

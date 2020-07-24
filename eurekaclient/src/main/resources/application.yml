@@ -2,10 +2,14 @@ spring:
   application:
     name: eurka-client-one
 
-# eureka ע����������
+# eureka
 eureka:
   instance:
     hostname: localhost
+    # 心跳间隔，即服务续约间隔时间，隔这个时间会主动心跳一次（缺省为30s）设置为5s上报一次心跳
+    leaseRenewalIntervalInSeconds: 4
+    # 设置服务过期时间配置,超过这个时间没有接收到心跳（缺省为90s）EurekaServer就会将这个实例剔除
+    leaseExpirationDurationInSeconds: 12
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
@@ -14,7 +18,6 @@ server:
   port: 8762
 
 
-#��̬ˢ������ ---��Ҫ����Ȩ������
 management:
   endpoints:
     web:

@@ -2,7 +2,7 @@ spring:
   application:
     name: eurka-feign
 
-# eureka ×¢²áÖĞĞÄÅäÖÃ
+# eureka
 eureka:
   instance:
     hostname: localhost

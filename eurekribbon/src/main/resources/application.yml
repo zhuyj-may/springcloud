@@ -2,13 +2,15 @@ spring:
   application:
     name: eurka-ribbon-one
 
-# eureka ע����������
+# eureka
 eureka:
   instance:
     hostname: localhost
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true                  # 消费端为了能快速响应服务请求会从Eureka Server拉取服务地址清单后缓存到本地 该设置为打开清单刷新
+    registry-fetch-interval-seconds: 2    # 定期的更新客户端的服务清单时间
 
 server:
   port: 8764
