@@ -13,6 +13,7 @@ public class HelloRibbonController {
 
     @RequestMapping("/helloRibbon")
     public String helloRibbon(String name){
+
         return helloRibbonService.helloRibbon(name);
     }
 }
