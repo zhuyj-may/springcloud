@@ -23,6 +23,3 @@ management:
     web:
       exposure:
         include: refresh,info
-
-config:
-  num: 102
