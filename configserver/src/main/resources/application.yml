@@ -1,0 +1,31 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zhuyj-may/springcloudconfig/
+          search-paths: config_server
+          default-label: master
+          # 私有仓库需要配置用户名和密码
+#          username:
+#          password:
+
+# eureka 注册中心配置
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+# 使用springcloudbus更新配置
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: bus-refresh

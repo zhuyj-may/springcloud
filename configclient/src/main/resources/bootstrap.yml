@@ -1,0 +1,26 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: configclient
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: configserver
+      label: master
+      name: configclient
+      profile: dev
+      uri: http://localhost:9001/
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+
