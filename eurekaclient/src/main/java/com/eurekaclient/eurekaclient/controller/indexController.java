@@ -13,8 +13,11 @@ public class indexController {
     @Value("${server.port}")
     String port;
 
+    @Value("${mysql.port}")
+    String port1;
+
     @RequestMapping("/index")
     public String index(@RequestParam(value = "name", defaultValue = "world") String name) {
-        return "hi " + name + " ,i am from port:" + port;
+        return "hi " + name + " ,i am from port:" + port1;
     }
 }

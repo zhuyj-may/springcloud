@@ -1,6 +1,15 @@
 spring:
   application:
     name: eurka-client-one
+    cloud:
+      config:
+        discovery:
+          enabled: true
+          service-id: configserver
+        label: master
+        name: eurka-client-one   #多模块获取git配置中心属性，这里需要些该模块名称
+        profile: dev
+        uri: http://localhost:9001/
 
 # eureka
 eureka:
